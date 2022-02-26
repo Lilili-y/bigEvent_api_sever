@@ -33,9 +33,12 @@ app.use(expressJWT({
 //导入并注册用户路由模块
 const userRouter = require('./router/user')
 app.use('/api', userRouter)
-//导入并注册用户信息模块
+//导入并注册用户信息路由模块
 const userinfoRouter = require('./router/userinfo')
 app.use('/my', userinfoRouter)
+//导入并注册文章分类路由模块
+const artCateRouter = require('./router/artcate')
+app.use('/my/article', artCateRouter)
 //定义错误级别的中间件
 app.use((err, req, res, next) => {
     //表单数据验证导致的错误
