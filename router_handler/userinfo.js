@@ -63,7 +63,7 @@ module.exports.updateAvatar = (req, res) => {
     //定义更新用户头像的SQL语句
     const sql = `update ev_users set user_pic=? where id=?`
     //执行SQL语句，更新对应头像
-    db.query(sql, [req.body.user_pic, req.user.id], (err, results) => {
+    db.query(sql, [req.body.avatar, req.user.id], (err, results) => {
         //执行SQL语句失败
         if (err) return res.cc(err)
         //执行SQL语句成功，但是影响行数不等于1

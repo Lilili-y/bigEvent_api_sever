@@ -39,6 +39,11 @@ app.use('/my', userinfoRouter)
 //导入并注册文章分类路由模块
 const artCateRouter = require('./router/artcate')
 app.use('/my/article', artCateRouter)
+//导入并注册文章路由模块
+const artliceRouter = require('./router/article')
+app.use('/my/article', artliceRouter)
+//托管静态资源
+app.use('/uploads', express.static('./uploads'))
 //定义错误级别的中间件
 app.use((err, req, res, next) => {
     //表单数据验证导致的错误
